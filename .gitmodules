@@ -1,0 +1,8 @@
+[submodule "WinRT/externals/SDL"]
+	path = WinRT/externals/SDL
+	url = https://github.com/tuxuser/SDL.git
+	branch = winrt_vs2019
+[submodule "WinRT/externals/SDL_mixer"]
+	path = WinRT/externals/SDL_mixer
+	url = https://github.com/tuxuser/SDL_mixer.git
+	branch = winrt_vs2019
