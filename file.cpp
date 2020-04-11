@@ -4,8 +4,13 @@
  * Copyright (C) 2004-2005 Gregory Montoir (cyx@users.sourceforge.net)
  */
 
+#ifndef __WINRT__
 #include <dirent.h>
 #include <sys/param.h>
+#else
+#include <windows.h>
+#include <stdlib.h>
+#endif
 #include <sys/stat.h>
 #include <string.h>
 #include "file.h"
@@ -88,6 +93,7 @@ bool File::open(const char *filepath) {
 	return _impl->open(filepath, "rb");
 }
 
+#ifndef __WINRT__
 static bool getFilePathNoCase(const char *filename, const char *path, char *out) {
 	bool ret = false;
 	DIR *d = opendir(path);
@@ -107,6 +113,33 @@ static bool getFilePathNoCase(const char *filename, const char *path, char *out)
 	}
 	return ret;
 }
+#else
+static bool getFilePathNoCase(const char* filename, const char* path, char *out) {
+	BOOL ret = false;
+	char filePath[_MAX_PATH];
+	WIN32_FIND_DATAA de;
+	snprintf(filePath, sizeof(filePath), "%s\\*", path);
+	HANDLE d = FindFirstFileA(filePath, &de);
+	if (d != INVALID_HANDLE_VALUE) {
+		BOOL found = TRUE;
+		do
+		{
+			if (de.cFileName[0] == '.')
+			{
+				continue;
+			}
+			else if (strcasecmp(de.cFileName, filename))
+			{
+				snprintf(out, sizeof(out), "%s\\%s", path, de.cFileName);
+				ret = true;
+				break;
+			}
+		} while (FindNextFileA(d, &de) != 0);
+		FindClose(d);
+	}
+	return ret;
+}
+#endif
 
 bool File::open(const char *filename, const char *path) {
 	_impl->close();

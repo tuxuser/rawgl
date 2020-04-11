@@ -1,4 +1,0 @@
-[submodule "WinRT/externals/SDL2"]
-	path = WinRT/externals/SDL2
-	url = https://github.com/tuxuser/SDL
-	branch = winrt_vs2019

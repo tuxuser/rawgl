@@ -12,7 +12,21 @@
 #include <cstdlib>
 #include <cassert>
 #include <stdint.h>
+#ifndef __WINRT__
 #include <sys/param.h>
+#else
+#define MAXPATHLEN 255
+#define strcasecmp _stricmp
+
+#ifndef S_ISDIR
+#define S_ISDIR(mode)  (((mode) & S_IFMT) == S_IFDIR)
+#endif
+
+#ifndef S_ISREG
+#define S_ISREG(mode)  (((mode) & S_IFMT) == S_IFREG)
+#endif
+#endif
+
 
 #undef ARRAYSIZE
 #define ARRAYSIZE(a) (sizeof(a)/sizeof(a[0]))

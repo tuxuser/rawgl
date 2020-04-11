@@ -4,6 +4,9 @@
  * Copyright (C) 2004-2005 Gregory Montoir (cyx@users.sourceforge.net)
  */
 
+#ifdef __WINRT__
+#include <malloc.h>
+#endif
 #include "sfxplayer.h"
 #include "mixer.h"
 #include "resource.h"

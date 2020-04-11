@@ -77,7 +77,7 @@
     <ClCompile>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(IntermediateOutputPath);%(AdditionalIncludeDirectories);$(ProjectDir)/externals/SDL2/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(IntermediateOutputPath);%(AdditionalIncludeDirectories);$(ProjectDir)/externals/SDL/include;$(ProjectDir)/externals/SDL_mixer/include</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <PreprocessorDefinitions>__WINRT__;_CRT_SECURE_NO_WARNINGS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -94,7 +94,7 @@
     <ClCompile>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <PrecompiledHeaderOutputFile>$(IntDir)pch.pch</PrecompiledHeaderOutputFile>
-      <AdditionalIncludeDirectories>$(ProjectDir);$(IntermediateOutputPath);%(AdditionalIncludeDirectories);$(ProjectDir)/externals/SDL2/include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir);$(IntermediateOutputPath);%(AdditionalIncludeDirectories);$(ProjectDir)/externals/SDL/include;$(ProjectDir)/externals/SDL_mixer/include</AdditionalIncludeDirectories>
       <AdditionalOptions>/bigobj %(AdditionalOptions)</AdditionalOptions>
       <DisableSpecificWarnings>4453;28204</DisableSpecificWarnings>
       <PreprocessorDefinitions>__WINRT__;_CRT_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -151,8 +151,11 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="externals\SDL2\VisualC-WinRT\UWP_VS2015\SDL-UWP.vcxproj">
+    <ProjectReference Include="externals\SDL\VisualC-WinRT\UWP_VS2015\SDL-UWP.vcxproj">
       <Project>{89e9b32e-a86a-47c3-a948-d2b1622925ce}</Project>
+    </ProjectReference>
+    <ProjectReference Include="externals\SDL_mixer\VisualC-WinRT\UWP_VS2015\SDL_mixer-UWP.vcxproj">
+      <Project>{18665277-e558-4484-93f4-e4dc7bb614cb}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
@@ -182,10 +185,20 @@
     <ClInclude Include="..\util.h" />
     <ClInclude Include="..\video.h" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="$(VSINSTALLDIR)\Common7\IDE\Extensions\Microsoft\VsGraphics\ImageContentTask.targets" />
     <Import Project="$(VSINSTALLDIR)\Common7\IDE\Extensions\Microsoft\VsGraphics\MeshContentTask.targets" />
     <Import Project="$(VSINSTALLDIR)\Common7\IDE\Extensions\Microsoft\VsGraphics\ShaderGraphContentTask.targets" />
+    <Import Project="packages\zlib_static.1.2.11.5\build\native\zlib_static.targets" Condition="Exists('packages\zlib_static.1.2.11.5\build\native\zlib_static.targets')" />
   </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\zlib_static.1.2.11.5\build\native\zlib_static.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\zlib_static.1.2.11.5\build\native\zlib_static.targets'))" />
+  </Target>
 </Project>

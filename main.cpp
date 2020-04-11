@@ -5,7 +5,9 @@
  */
 
 #include <SDL.h>
+#ifndef __WINRT__
 #include <getopt.h>
+#endif
 #include <sys/stat.h>
 #include "engine.h"
 #include "graphics.h"
@@ -117,6 +119,7 @@ int main(int argc, char *argv[]) {
 	scaler.factor = 1;
 	bool defaultGraphics = true;
 	bool demo3JoyInputs = false;
+#ifndef __WINRT__
 	if (argc == 2) {
 		// data path as the only command line argument
 		struct stat st;
@@ -194,6 +197,9 @@ int main(int argc, char *argv[]) {
 			return 0;
 		}
 	}
+#else
+	SDL_SetHint(SDL_HINT_WINRT_HANDLE_BACK_BUTTON, "1");
+#endif
 	g_debugMask = DBG_INFO; // | DBG_VIDEO | DBG_SND | DBG_SCRIPT | DBG_BANK | DBG_SER;
 	Engine *e = new Engine(dataPath, part);
 	if (defaultGraphics) {

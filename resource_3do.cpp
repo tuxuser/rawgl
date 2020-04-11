@@ -1,6 +1,8 @@
 
 #include <sys/stat.h>
+#ifndef __WINRT__
 #include <unistd.h>
+#endif
 #include "resource_3do.h"
 #include "util.h"
 
