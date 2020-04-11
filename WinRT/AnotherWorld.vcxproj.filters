@@ -37,6 +37,72 @@
     <ClCompile Include="sources\SDL_winrt_main_NonXAML.cpp">
       <Filter>sources</Filter>
     </ClCompile>
+    <ClCompile Include="..\aifcplayer.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\bitmap.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\engine.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\file.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\graphics_gl.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\graphics_soft.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\mixer.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\pak.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\resource.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\resource_3do.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\resource_nth.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\resource_win31.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\scaler.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\screenshot.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\script.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sfxplayer.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\staticres.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\systemstub_sdl.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\unpack.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
+    <ClCompile Include="..\video.cpp">
+      <Filter>rawgl</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Image Include="Assets\Square44x44Logo.scale-200.png">
@@ -50,6 +116,70 @@
     </Image>
   </ItemGroup>
   <ItemGroup>
-    <Media Include="data\.keep" />
+    <Media Include="data\.keep">
+      <Filter>data</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\aifcplayer.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\bitmap.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\engine.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\file.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\graphics.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\intern.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\mixer.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\pak.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\resource.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\resource_3do.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\resource_nth.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\resource_win31.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\scaler.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\screenshot.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\script.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sfxplayer.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\systemstub.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\unpack.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
+    <ClInclude Include="..\video.h">
+      <Filter>rawgl</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

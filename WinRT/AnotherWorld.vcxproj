@@ -124,6 +124,28 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\aifcplayer.cpp" />
+    <ClCompile Include="..\bitmap.cpp" />
+    <ClCompile Include="..\engine.cpp" />
+    <ClCompile Include="..\file.cpp" />
+    <ClCompile Include="..\graphics_gl.cpp" />
+    <ClCompile Include="..\graphics_soft.cpp" />
+    <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="..\mixer.cpp" />
+    <ClCompile Include="..\pak.cpp" />
+    <ClCompile Include="..\resource.cpp" />
+    <ClCompile Include="..\resource_3do.cpp" />
+    <ClCompile Include="..\resource_nth.cpp" />
+    <ClCompile Include="..\resource_win31.cpp" />
+    <ClCompile Include="..\scaler.cpp" />
+    <ClCompile Include="..\screenshot.cpp" />
+    <ClCompile Include="..\script.cpp" />
+    <ClCompile Include="..\sfxplayer.cpp" />
+    <ClCompile Include="..\staticres.cpp" />
+    <ClCompile Include="..\systemstub_sdl.cpp" />
+    <ClCompile Include="..\unpack.cpp" />
+    <ClCompile Include="..\util.cpp" />
+    <ClCompile Include="..\video.cpp" />
     <ClCompile Include="sources\SDL_winrt_main_NonXAML.cpp">
       <CompileAsWinRT>true</CompileAsWinRT>
     </ClCompile>
@@ -137,6 +159,28 @@
     <Media Include="data\.keep">
       <FileType>Document</FileType>
     </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\aifcplayer.h" />
+    <ClInclude Include="..\bitmap.h" />
+    <ClInclude Include="..\engine.h" />
+    <ClInclude Include="..\file.h" />
+    <ClInclude Include="..\graphics.h" />
+    <ClInclude Include="..\intern.h" />
+    <ClInclude Include="..\mixer.h" />
+    <ClInclude Include="..\pak.h" />
+    <ClInclude Include="..\resource.h" />
+    <ClInclude Include="..\resource_3do.h" />
+    <ClInclude Include="..\resource_nth.h" />
+    <ClInclude Include="..\resource_win31.h" />
+    <ClInclude Include="..\scaler.h" />
+    <ClInclude Include="..\screenshot.h" />
+    <ClInclude Include="..\script.h" />
+    <ClInclude Include="..\sfxplayer.h" />
+    <ClInclude Include="..\systemstub.h" />
+    <ClInclude Include="..\unpack.h" />
+    <ClInclude Include="..\util.h" />
+    <ClInclude Include="..\video.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
